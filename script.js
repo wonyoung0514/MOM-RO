@@ -31,3 +31,23 @@
   // 페이지 로드 후 첫 체크
   onScroll();
 });
+
+
+// 이미지 갤러리
+document.addEventListener('DOMContentLoaded', () => {
+  const gallery = document.querySelector('.Information-Architecture');
+  const slides = gallery.querySelectorAll('.slides img');
+  const prevBtn = gallery.querySelector('.prev');
+  const nextBtn = gallery.querySelector('.next');
+  let idx = 0;
+
+  function show(i) {
+    slides[idx].classList.remove('active');
+    idx = (i + slides.length) % slides.length;
+    slides[idx].classList.add('active');
+  }
+
+  nextBtn.addEventListener('click', () => show(idx + 1));
+  prevBtn.addEventListener('click', () => show(idx - 1));
+});
+
