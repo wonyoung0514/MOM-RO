@@ -9,8 +9,12 @@ html, body {
     box-sizing: border-box;
 }
 
-
-
+.center-block {
+  max-width: 800px;      /* 원하는 한계 너비 */
+  margin: 0 auto;        /* 좌우 자동 마진 */
+  padding: 0 20px;       /* 화면 폭이 좁을 때도 여백 확보 */
+  text-align: center;    /* 내부 텍스트 중앙 정렬 */
+}
 
 /* <header> */
 
@@ -82,7 +86,7 @@ html {
 }
 
 
-#about .text-box img {
+#about .Overview .text-box img {
     max-width: 100%;
     /* 부모 너비를 넘지 않도록 */
     height: auto;
@@ -93,6 +97,30 @@ html {
     margin-left: 120px;
     margin-bottom: 70px;
     display: block;
+}
+
+#about .text-box img {
+      max-width: 100%;
+    /* 부모 너비를 넘지 않도록 */
+    height: auto;
+    /* 가로 비율 유지 */
+    margin-top: 20px;
+    /* 텍스트와 이미지 사이 여백 */
+    margin-bottom: 70px;
+    display: block;
+}
+
+
+#design .Brand-Color .text-box .intro-group p{
+    margin-left: 20rem;
+}
+
+#design .Typography .text-box .intro-group p{
+    margin-left: 20rem;
+}
+
+#design .Logo .text-box .intro-group p{
+    margin-left: 26rem;
 }
 
 #about .Background .text-box img {
@@ -121,14 +149,60 @@ html {
 
 }
 
-#about .text-box p, #design .text-box p{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 20px;
-    max-width: 100%;
-    width: 100%;
+
+
+
+.content-group .img-center {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
 }
+
+/* h5와 p 기본 마진 없애기 */
+.intro-group > h5, .intro-group > h3{
+  margin: 0;
+}
+  
+.intro-group > p {
+  margin-left: 25rem;
+}
+
+/* p는 남은 공간 채우기 */
+.intro-group > p {
+  flex: 1;
+  line-height: 1.6;         /* 보기 좋은 행간 */
+}
+#design .Icon .text-box .intro-group > p {
+  margin-left: 27rem;
+}
+
+.intro-group {
+  display: flex;            /* 가로로 나열 */
+  align-items: flex-start;  /* 문단 텍스트 최상단 기준 맞춤 */
+  gap: 2rem;                /* 칸 사이 여유 */
+}
+
+
+
+
+#design .Design-Keyword .text-box .intro-group > p {
+    margin-left: 24rem;
+}
+
+
+
+
+
+/* 오른쪽 이미지/스와치 중앙 정렬 */
+.content-group .img-center {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+
 
 
 #about .Project-Goal .text-box img {
@@ -143,6 +217,20 @@ html {
     margin-left: 30px;
 
 }
+
+
+
+
+
+
+.img-center {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+
 
 
 #about .Background p {
@@ -165,7 +253,33 @@ html {
   height: auto;
 }
 
+#design .Icon .text-box img.img-center{
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
 
+/* Service 섹션 아이콘 래퍼 */
+#design .Icon .text-box {
+  overflow: visible;   /* 이미지가 넘쳐도 잘리지 않도록 */
+}
+
+/* 이미지에만 여백 확보 */
+#design .Icon .text-box img.img-center {
+  display: block;  
+  margin: 70px auto;                   /* 위 70px, 좌우 자동 중앙 */
+  width: auto;                         
+  max-width: calc(100% - 10rem);       /* 좌우 각 5rem씩 비워두기 */
+  height: auto;
+}
+
+
+#design .Logo .text-box img.img-center {
+  display: block;  
+  margin: 70px auto;                   /* 위 70px, 좌우 자동 중앙 */
+  width: auto;                         
+  max-width: calc(100% - 10rem);       /* 좌우 각 5rem씩 비워두기 */
+  height: auto;
+}
 
 
 
@@ -177,21 +291,21 @@ html {
   overflow: hidden;
 }
 
-.Information-Architecture, #about .text-box, #design .text-box{
+#Information-architecture,
+#about .text-box,
+#design .text-box:not(.container) {
   position: relative;
-  width: 1600px;         /* 실제 슬라이드 이미지 가로 크기 */
-  margin: 4rem;    
+  width: 1600px;
+  margin: 4rem;
   overflow: hidden;
 }
-
-
 
 
 
 .Information-Architecture .slides {
   position: relative;
   width: 100%;
-  height: 1080px;             
+  height: 900px;             
   overflow: hidden;
 }
 
@@ -219,46 +333,34 @@ html {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 4rem;
+  height: 4rem;
   border: none;
   background: rgba(255, 255, 255, 0.8);
   font-size: 1.5rem;
   cursor: pointer;
-  z-index: 10;          /* 버튼이 이미지를 덮도록 보장 */
+  z-index: 10;
+  background: none;     /* 배경 반투명 흰색 지우기 */
+  font-size: 0;         /* 혹시 남아 있는 텍스트 숨기기 */
+  padding: 0;         /* 버튼이 이미지를 덮도록 보장 */
 }
 .Information-Architecture .prev { left: 0.5rem; }
 .Information-Architecture .next { right: 0.5rem; }
 
 
-/* section#design .Design-Keyword .text-box > img {
-  display: block;            
-  position: relative;        
-  left: 50%;                  
-  transform: translateX(-50%)  
-  width: 100vw;               
-  max-width: none;            
-  height: auto;
-  margin: 0;                 
-  padding: 0;    
-} */
 
-
+.Information-Architecture .prev img,
+.Information-Architecture .next img {
+  display: block;       /* inline img 의 공백 제거 */
+  width: 4rem;        /* 버튼 박스 크기와 동일하게 */
+  height: 4rem;       /* 비율 유지하려면 auto 로 해도 OK */
+  object-fit: contain;  /* svg 외 어떤 이미지라도 비율 유지 */
+}
 
 section#design {
   overflow-x: visible;  /* 섹션 단위로 가로 넘침 허용 */
 }
 
-/* section#design .Design-Keyword .text-box > img.full-bleed {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
-  height: auto;
-  display: block;
-} */
 #about,
 #design,
 #service {
@@ -289,16 +391,19 @@ margin-left: 100px;
 
 
 /* 글씨 위로 올라오는 애니메이션 */
+/* 1) 초기 상태 */
 .hidden {
-    transform: translateY(50px);
-    opacity: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-.active_ani {
-    transform: translateY(0);
-    opacity: 1;
+/* 2) 활성 상태 */
+.hidden.active_ani {
+  transform: translateY(0);
+  opacity: 1;
 }
+
 
 .group {
     display: flex;
@@ -307,7 +412,7 @@ margin-left: 100px;
     width: 100%;
     height: 100vh;
     position: relative;
-    background: #ccc;
+    background: #ffffff;
 }
 
 .app-block {
@@ -324,18 +429,19 @@ margin-left: 100px;
     flex-direction: row-reverse;
 }
 
+
 .group .text-box {
-    max-width: 500px;
+    max-width: 800px;
     z-index: 2;
 }
 
 .group .text-box > h2 {
-    text-align: center;
+    text-align: left;
     font-size: 50px;
 }
 
 .group .text-box > p {
-    text-align: center;
+    text-align: left;
 }
 
 .group .video-box {
@@ -393,19 +499,5 @@ margin-left: 100px;
 .footer-col ul li + li {
   margin-top: 0.5rem;
 }
-
-
-
-/* section#design .Design-Keyword .text-box > img.full-bleed {
-  display: block;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  max-width: none;
-  margin: 0;                 
-  padding: 0;                
-  height: auto;
-} */
 
 
