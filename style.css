@@ -122,14 +122,17 @@ html {
 
 
 #design .Brand-Color .text-box .intro-group p{
+  font-size: 20px;
     margin-left: 15rem;
 }
 
 #design .Typography .text-box .intro-group p{
+  font-size: 20px;
     margin-left: 15rem;
 }
 
 #design .Logo .text-box .intro-group p{
+  font-size: 20px;
     margin-left: 22rem;
 }
 
@@ -210,6 +213,7 @@ html {
   line-height: 1.6;         /* 보기 좋은 행간 */
 }
 #design .Icon .text-box .intro-group > p {
+  font-size: 20px;
   margin-left: 23rem;
 }
 
@@ -223,6 +227,7 @@ html {
 
 
 #design .Design-Keyword .text-box .intro-group > p {
+  font-size: 20px;
   margin-top: 0;
   margin-left: 18.5rem;
 }
@@ -260,13 +265,16 @@ html {
 }
 
 #about .text-box h5, #design .text-box h5, .Information-Architecture h5{
-        font-size: 20px;
+    font-weight: inherit;
+    font-size: 20px;
     text-align: left;
     margin-left: 30px;
 
 }
 #about .Project-Goal p{
-  font-weight: bold;
+  font-size: 20px;
+  margin-top: 0;
+  font-weight: inherit;
 }
 
 
