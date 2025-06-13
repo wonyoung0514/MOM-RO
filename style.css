@@ -319,7 +319,7 @@ html {
   margin: 100px auto;      /* 위/아래 100px, 좌우 auto */
   max-width: 80%;          /* 예시: 너비를 80%로 줄이고 싶다면 */
   height: auto;
-  margin-left: 460px;
+  margin-left: 455px;
 }
 #design .Icon .text-box img.img-center {
     margin-left: 5rem;
