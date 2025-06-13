@@ -1,3 +1,17 @@
+window.addEventListener('load', () => {
+  // 해시가 #home 이 아니면 강제로 홈으로 이동
+  if (location.hash !== '#home') {
+    // 1) 해시를 #home 으로 바꿔 버리기
+    history.replaceState(null, '', '#home');
+    // 2) 스크롤 최상단으로
+    window.scrollTo(0, 0);
+  }
+});
+
+
+
+
+
 const targets = document.querySelectorAll('.hidden');
 
 function checkScrollAnim() {
