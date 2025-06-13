@@ -233,12 +233,10 @@ html {
 }
 
 .Design-Keyword, .Brand-Color, .Typography, .Logo, .Icon, .Design-System, .Background, .Project-Goal, .Information-Architecture, .Overview{
-    /* flex 는 세로 중앙 정렬을 위해 그대로 두셔도 되고… */
   display: flex;
   align-items: center;
-  justify-content: center; /* (선택) 그룹 안에 1개 이상 자식이 있을 때 자식들을 가로로 중앙 정렬 */
+  justify-content: center;
 
-  /* ★ 여기를 추가 ★ */
   max-width: 2000px;   /* 원하는 최대 가로 폭 */
   margin: 0 auto;      /* 좌우 마진 자동 → 뷰포트 중앙에 고정 */
   padding: 0 20px;     /* 반응형 여백 (선택) */
@@ -499,7 +497,7 @@ margin-left: 100px;
     font-size: 50px;
 
       display: block;        /* width가 적용되도록 */
-  width: 650px;          /* 원하는 고정 너비 */
+  /* width: 650px;          */
   max-width: 100%;       /* 뷰포트보다 클 경우 넘치지 않게 */
   white-space: normal;   /* 자동 줄바꿈 허용 */
   margin: 0 auto;  
@@ -518,6 +516,60 @@ margin-left: 100px;
     width: 100%;
     height: auto;
     object-fit: cover;
+}
+
+
+
+
+.text-box.center-title > h2 {
+  text-align: center;
+}
+
+.app-center {
+  display: flex;
+  justify-content: space-between; /* 양끝에서 벌어지게 */
+  align-items: center;
+  gap: 2rem;       /* 텍스트↔영상↔텍스트 사이 간격 */
+  flex-wrap: nowrap; /* 무조건 한 줄 */
+}
+
+/* 텍스트 박스는 flex:1 로 남는 공간 자동 분배 */
+.app-center > .text-box {
+  flex: 1;              /* 양쪽 텍스트는 같은 넓이 */
+  max-width: 700px;     /* 필요하면 최대값 설정 */
+}
+
+/* 영상 박스는 컨텐츠 크기에 고정 */
+.app-center > .video-box {
+  flex: 0 0 auto;       /* 늘어나지 않고 콘텐츠 크기만큼만 */
+  width: 320px;         /* 영상 고정폭 */
+}
+
+section#service 
+  .app-center 
+  .text-box.text--left > h2 {
+    width: 514px;
+    max-width: 100%;
+}
+
+/* h2 스타일은 그대로 유지하되 텍스트 중앙 정렬 혹은 좌측 정렬 */
+.app-center .text-box > h2 {
+  display: block;        /* width가 적용되게 */
+  width: 630px;         
+  max-width: 100%;       /* 화면이 더 좁을 땐 넘치지 않게 */
+  margin: 0 auto;        /* 부모 안에서 가로 중앙 정렬 */
+  white-space: normal;   /* 단어 단위로 줄바꿈 */
+  font-size: 50px;
+  line-height: 1.2;      /* 50px × 1.2 ≒ 60px per line */
+  text-align: left;
+}
+
+
+.app-block.reverse .text-box.center-title > h2 {
+  display: block;     /* width 가 적용되도록 */
+  width: 800px;       /* 원하는 가로 폭으로 조절 */
+  max-width: 100%;    /* 화면이 좁아지면 넘치지 않도록 */
+  margin: 0 auto;     /* (선택) 가운데 정렬 유지 */
 }
 
 
