@@ -314,7 +314,7 @@ html {
   margin-left: 450px;
 }
 
-#design .Typography .text-box img.img-center{
+#design .Typography .text-box img {
   margin-top: 100px;    /* 위쪽 여백 */
   margin-right: auto;   /* 오른쪽은 auto 로 중앙정렬 유지 */
   margin-bottom: 100px; /* 아래쪽 여백(필요 없으면 0으로) */
