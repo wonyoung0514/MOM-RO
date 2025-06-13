@@ -3,14 +3,24 @@ const targets = document.querySelectorAll('.hidden');
 function checkScrollAnim() {
   targets.forEach(target => {
     const rect = target.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
+    // 1. 화면에 들어오면 올라오며 보이기
+    if (rect.top < window.innerHeight - 100 && rect.bottom > 0) {
       target.classList.add('active_ani');
+      target.classList.remove('leave_ani');
+    }
+    // 2. 화면에서 벗어나면 아래로 내려가며 사라지기
+    else {
+      target.classList.remove('active_ani');
+      target.classList.add('leave_ani');
     }
   });
 }
 
-// 스크롤할 때마다 체크
+// 스크롤할 때마다 실행
 window.addEventListener('scroll', checkScrollAnim);
+
+
+
 // 로드시에도 한 번 실행
 window.addEventListener('load', checkScrollAnim);
 //   document.addEventListener("DOMContentLoaded", () => {

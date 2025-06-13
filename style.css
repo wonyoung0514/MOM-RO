@@ -447,19 +447,19 @@ margin-left: 100px;
 
 
 /* 글씨 위로 올라오는 애니메이션 */
-/* 1) 초기 상태 */
 .hidden {
   transform: translateY(50px);
   opacity: 0;
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
-
-/* 2) 활성 상태 */
 .hidden.active_ani {
   transform: translateY(0);
   opacity: 1;
 }
-
+.hidden.leave_ani {
+  transform: translateY(80px);
+  opacity: 0;
+}
 
 /* 1) .group 컨테이너 폭을 제한하고 가운데 정렬 */
 .group {
@@ -495,12 +495,15 @@ margin-left: 100px;
 .group .text-box > h2 {
     text-align: left;
     font-size: 50px;
-
-      display: block;        /* width가 적용되도록 */
-  /* width: 650px;          */
-  max-width: 100%;       /* 뷰포트보다 클 경우 넘치지 않게 */
-  white-space: normal;   /* 자동 줄바꿈 허용 */
-  margin: 0 auto;  
+    font-weight: 400;
+    display: block;
+    /* width가 적용되도록 */
+    /* width: 650px;          */
+    max-width: 100%;
+    /* 뷰포트보다 클 경우 넘치지 않게 */
+    white-space: normal;
+    /* 자동 줄바꿈 허용 */
+    margin: 0 auto;
 }
 
 .group .text-box > p {
@@ -548,14 +551,32 @@ margin-left: 100px;
 section#service 
   .app-center 
   .text-box.text--left > h2 {
-    width: 514px;
-    max-width: 100%;
+  width: 470px;
+  max-width: 100%;
+  font-size: 50px;
+  line-height: 1.2;
+  text-align: left;
+  font-weight: bold;
+}
+
+section#service .app-center .text-box.text--left > h2 .h2-light {
+  font-weight: 400;
+}
+section#service .app-center .text-box.text--left > h2 strong {
+  font-weight: bold;
+}
+
+.sub-text {
+  font-size: 22px;       /* 본문 하단 서브텍스트 크기 */
+  font-weight: 400;
+  color: #444;
+  margin-top: 14px;
 }
 
 /* h2 스타일은 그대로 유지하되 텍스트 중앙 정렬 혹은 좌측 정렬 */
 .app-center .text-box > h2 {
   display: block;        /* width가 적용되게 */
-  width: 630px;         
+  width: 470px;         
   max-width: 100%;       /* 화면이 더 좁을 땐 넘치지 않게 */
   margin: 0 auto;        /* 부모 안에서 가로 중앙 정렬 */
   white-space: normal;   /* 단어 단위로 줄바꿈 */
