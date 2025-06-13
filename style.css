@@ -122,14 +122,14 @@ html {
 
 #design .Typography .text-box .intro-group p {
     font-size: 20px;
-    margin-left: 15rem;
+    margin-left: 14rem;
     margin-top: 0;
 }
 
 #design .Logo .text-box .intro-group p {
     font-size: 20px;
     margin-top: 0;
-    margin-left: 22rem;
+    margin-left: 21rem;
 }
 
 #about .Background .text-box img {
@@ -201,7 +201,7 @@ html {
 }
 
 .intro-group > p {
-    margin-left: 20rem;
+    margin-left: 15rem;
 }
 
 .intro-group > p {
@@ -211,7 +211,7 @@ html {
 #design .Icon .text-box .intro-group > p {
     font-size: 20px;
     margin-top: 0;
-    margin-left: 23rem;
+    margin-left: 19rem;
 }
 
 .intro-group {
@@ -225,7 +225,7 @@ html {
 #design .Design-Keyword .text-box .intro-group > p {
     font-size: 20px;
     margin-top: 0;
-    margin-left: 18.5rem;
+    margin-left: 13rem;
 }
 
 .Background,
@@ -301,7 +301,6 @@ html {
 #about .text-box img.img-center,
 #design .text-box img.img-center {
     display: block;
-    /* 블록으로 바꿔서 margin auto 적용 */
     margin: 70px auto 0;
     max-width: 100%;
     height: auto;
@@ -314,13 +313,14 @@ html {
   margin-left: 450px;
 }
 
-#design .Typography .text-box img {
-  margin-top: 100px;    /* 위쪽 여백 */
-  margin-right: auto;   /* 오른쪽은 auto 로 중앙정렬 유지 */
-  margin-bottom: 100px; /* 아래쪽 여백(필요 없으면 0으로) */
-  margin-left: 450px;
+#design .Typography .text-box img.img-center {
+  display: block;
+  /* 필요하다면 기존 마진·사이즈를 덮어쓰기 */
+  margin: 100px auto;      /* 위/아래 100px, 좌우 auto */
+  max-width: 80%;          /* 예시: 너비를 80%로 줄이고 싶다면 */
+  height: auto;
+  margin-left: 460px;
 }
-
 #design .Icon .text-box img.img-center {
     margin-left: 5rem;
     margin-right: 5rem;
