@@ -123,16 +123,19 @@ html {
 
 #design .Brand-Color .text-box .intro-group p{
   font-size: 20px;
+  margin-top: 0;
     margin-left: 15rem;
 }
 
 #design .Typography .text-box .intro-group p{
   font-size: 20px;
-    margin-left: 15rem;
+  margin-left: 15rem;
+  margin-top: 0;
 }
 
 #design .Logo .text-box .intro-group p{
   font-size: 20px;
+  margin-top: 0;
     margin-left: 22rem;
 }
 
@@ -214,6 +217,7 @@ html {
 }
 #design .Icon .text-box .intro-group > p {
   font-size: 20px;
+  margin-top: 0;
   margin-left: 23rem;
 }
 
@@ -264,7 +268,7 @@ html {
 
 #about .text-box h5, #design .text-box h5, .Information-Architecture h5{
     font-weight: inherit;
-    font-size: 20px;
+    font-size: 30px;
     text-align: left;
     margin-left: 30px;
 
@@ -506,6 +510,11 @@ margin-left: 100px;
     margin: 0 auto;
 }
 
+.group .app-block.reverse .text-box h2 {
+  text-align: right;
+}
+
+
 .group .text-box > p {
     text-align: left;
 }
@@ -555,7 +564,7 @@ section#service
   max-width: 100%;
   font-size: 50px;
   line-height: 1.2;
-  text-align: left;
+  text-align: center;
   font-weight: bold;
 }
 
@@ -582,7 +591,7 @@ section#service .app-center .text-box.text--left > h2 strong {
   white-space: normal;   /* 단어 단위로 줄바꿈 */
   font-size: 50px;
   line-height: 1.2;      /* 50px × 1.2 ≒ 60px per line */
-  text-align: left;
+  text-align: center;
 }
 
 
@@ -593,7 +602,9 @@ section#service .app-center .text-box.text--left > h2 strong {
   margin: 0 auto;     /* (선택) 가운데 정렬 유지 */
 }
 
-
+.group .app-block.reverse .text-box.center-title h2 {
+  text-align: center;
+}
 
 
 /* <footer> */
